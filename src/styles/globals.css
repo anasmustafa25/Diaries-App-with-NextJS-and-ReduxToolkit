@@ -1,69 +1,87 @@
+/* Background & General Styling */
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background: linear-gradient(135deg, #e6f0f9, #c7d9e7); /* Soft blue gradient */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(135deg, #2c3e50, #34495e, #16a085); /* Dark gradient with vibrant touches */
+  color: #ecf0f1; /* Light text on dark background */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   text-align: center;
+  box-sizing: border-box;
 }
 
+/* Heading Styling */
 h1 {
-  text-align: center;
-  color: #2c3e50; /* Dark gray for heading */
+  font-size: 3rem;
+  font-weight: bold;
+  color: #e74c3c; /* Red accent for a strong title */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
 }
 
+/* Button Styling */
 button {
-  background-color: #3498db; /* Professional blue */
+  background-color: #e74c3c; /* Bold red */
   color: white;
   border: none;
-  padding: 12px 20px;
-  margin: 10px 0; /* Spacing between buttons */
+  padding: 14px 30px;
+  margin: 15px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
-  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #2980b9; /* Darker blue on hover */
-  transform: scale(1.05); /* Slightly grows on hover */
+  background-color: #c0392b; /* Darker red on hover */
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Make form responsive */
+/* Form Styling */
 .diary-form {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Increased gap */
+  gap: 25px;
+  background: rgba(0, 0, 0, 0.8); /* Dark form background */
+  padding: 30px;
+  border-radius: 10px;
   width: 90%;
-  max-width: 500px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  align-items: center; /* Ensures inputs are centered */
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  align-items: center; /* Center the form elements */
 }
 
 .diary-form input,
 .diary-form textarea {
-  width: 92%;
-  padding: 12px;
-  border: 1px solid #dcdcdc; /* Light gray border */
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #16a085; /* Accent border color */
   border-radius: 8px;
-  box-sizing: border-box; /* Prevents padding from affecting width */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #34495e;
+  color: white;
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', sans-serif;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Ensures padding doesn't affect the width */
 }
 
-.diary-form textarea {
-  height: 120px;
+.diary-form input:focus,
+.diary-form textarea:focus {
+  border-color: #e74c3c; /* Red border on focus */
+  outline: none;
 }
 
-/* Style diary list */
+/* Diary List Styling */
 .diary-item {
-  background: #ffffff;
+  background: rgba(0, 0, 0, 0.7); /* Darker background for items */
   padding: 20px;
   margin: 15px 0;
   border-radius: 10px;
@@ -90,7 +108,7 @@ button:hover {
   line-height: 1.6;
 }
 
-/* Responsive Layout */
+/* Responsive Design */
 @media (max-width: 600px) {
   body {
     padding: 10px;
@@ -106,6 +124,17 @@ button:hover {
   }
 
   .diary-form {
-    padding: 15px;
+    padding: 20px; /* Reduced padding for smaller screens */
+  }
+
+  h1 {
+    font-size: 2rem; /* Adjust heading size for small screens */
+  }
+  
+  /* Ensure form and items are centered correctly */
+  .diary-form input,
+  .diary-form textarea {
+    padding: 12px; /* Reduce padding for smaller screens */
+    font-size: 1rem; /* Adjust font size */
   }
 }
